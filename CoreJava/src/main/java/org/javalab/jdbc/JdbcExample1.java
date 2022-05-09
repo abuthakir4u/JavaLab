@@ -1,7 +1,7 @@
 package org.javalab.jdbc;
 
 import java.sql.*;
-
+//Sample JDBC code to connect to db and fetch rows
 public class JdbcExample1 {
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.cj.jdbc.Driver");

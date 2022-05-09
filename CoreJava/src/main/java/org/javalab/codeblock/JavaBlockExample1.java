@@ -1,5 +1,5 @@
 package org.javalab.codeblock;
-
+//Sample program for Java instance block demo
 public class JavaBlockExample1 {
     {
         System.out.println("I am an instance block 1");

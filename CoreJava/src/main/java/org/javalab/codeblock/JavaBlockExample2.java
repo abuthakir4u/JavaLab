@@ -1,5 +1,5 @@
 package org.javalab.codeblock;
-
+//Sample program for Java static block demo
 public class JavaBlockExample2 {
 
     static {

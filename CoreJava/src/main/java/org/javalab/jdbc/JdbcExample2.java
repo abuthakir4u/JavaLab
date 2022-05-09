@@ -1,7 +1,7 @@
 package org.javalab.jdbc;
 
 import java.sql.*;
-
+//Sample code to insert and read data from table with JDBC + DAO
 public class JdbcExample2 {
     public static void main(String[] args) {
         StudentDAO dao = new StudentDAO();
