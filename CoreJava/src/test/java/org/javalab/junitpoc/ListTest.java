@@ -1,9 +1,9 @@
 package org.javalab.junitpoc;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.*;
 import org.mockito.Mockito;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class ListTest {
@@ -42,10 +42,15 @@ public class ListTest {
     }
 
     @Test (expected = RuntimeException.class)
-    public void testListGet2() {
+    public void testListGet3() {
         List listMock = Mockito.mock(List.class);
         Mockito.when(listMock.get(Mockito.anyInt())).thenThrow(new RuntimeException("something went wrong"));
-        listMock.get(0);
+    listMock.get(0);
     }
-
+    @Test
+    public void testListGet4() {
+        List listMock = Mockito.mock(List.class);
+        Mockito.when(listMock.get(Mockito.anyInt())).thenThrow(new RuntimeException("something went wrong"));
+        Assert.assertThrows(RuntimeException.class, () -> listMock.get(0));
+    }
 }
