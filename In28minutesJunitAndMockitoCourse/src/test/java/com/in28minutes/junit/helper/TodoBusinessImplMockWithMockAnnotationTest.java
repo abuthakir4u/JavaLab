@@ -1,10 +1,11 @@
 package com.in28minutes.junit.helper;
 
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.Mockito;
+import org.mockito.*;
+import org.mockito.junit.MockitoJUnit;
+import org.mockito.junit.MockitoRule;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import java.util.Arrays;
@@ -12,14 +13,18 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-@RunWith(MockitoJUnitRunner.class)
+//@RunWith(MockitoJUnitRunner.class)
 public class TodoBusinessImplMockWithMockAnnotationTest {
+
+    @Rule
+    public MockitoRule mockitoRule = MockitoJUnit.rule();
 
     @Mock
     TodoService todoServiceMock;
-
     @InjectMocks
     TodoBusinessImpl todoBusinessImpl;
+    @Captor
+    ArgumentCaptor<String> stringArgumentCaptor;
 
     @Test
     public void testRetriveTodosRelatedToSpring_usingMock1(){
