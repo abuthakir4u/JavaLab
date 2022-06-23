@@ -1,0 +1,26 @@
+Streams
+-------
+- Supported in Java 8
+- Stream brings functional programming to Java
+- Make heavy use of lambda expression
+- ParallelStreams make it very easy to multi-thread operations
+- Stream pipeline consist of
+    - source
+    - followed by zero or more intermediate operations
+    - and a terminal operation
+- Stream source
+    - created from collections, Lists, Sets, ints, longs, doubles, arrays, lines of a file
+- Stream operations are either intermediate or terminal
+    - Intermediate operations: filter, map, sort etc. All will return stream so we can chain multiple intermediate operations
+    - Terminal operations: forEach, collect, reduce. All these will either void or return a non-stream result
+- Intermediate Operations
+    - Zero or more intermediate operations are allowed
+    - Order matters for large dataset: filter first then sort or map
+    - For very large datasets use ParallelStream to enable multiple threads
+    - Intermediate operations: anyMatch, distinct, filter, findFirst, flatmap, map, skip, sorted
+- Terminal operation
+    - only one terminal operation allowed
+    - forEach applies the same function to each element
+    - collect saves the element into a collection
+    - other options reduce the stream to a single summary element
+        count, max, min, reduce, summaryStatistics
