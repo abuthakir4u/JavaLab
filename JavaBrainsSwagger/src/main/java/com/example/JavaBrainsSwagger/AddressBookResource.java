@@ -1,5 +1,7 @@
 package com.example.JavaBrainsSwagger;
 
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -14,7 +16,11 @@ public class AddressBookResource {
 
 
     @GetMapping("/{id}")
-    public Contact getContact(@PathVariable String id) {
+    @ApiOperation(value = "Finding contacts by id",
+            notes = "Provide an id to lookup specific contact from address book",
+            response = Contact.class)
+    public Contact getContact(@ApiParam(value = "Id value of the contact you need to retrieve", required = true)
+                              @PathVariable String id) {
         return contacts.get(id);
     }
 
