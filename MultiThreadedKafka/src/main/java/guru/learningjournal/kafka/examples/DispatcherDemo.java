@@ -42,7 +42,7 @@ public class DispatcherDemo {
 
         try {
             for(Thread t : dispatchers) {
-                t.join();
+                t.join(); //this is to make the main therad to wait for all the thread to complete
             }
         } catch (Exception e) {
 

@@ -9,7 +9,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class Dispatcher implements Runnable{
+public class  Dispatcher implements Runnable{
 
     private static final Logger logger = LogManager.getLogger();
     private String fileLocation;
